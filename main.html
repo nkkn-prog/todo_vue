@@ -9,20 +9,21 @@
   <title>タスク表示アプリ</title>
 </head>
 <body>
-  <h1>リロードすると入力したタスクが消えるアプリ</h1>
+  <h1>リロードすると入力したタスクが消えるアプリ(Vueの練習)</h1>
   <hr>
   <div id="app">
-    <input style="width:250px; height:100%;" type="text" v-model="newTask" placeholder="ここにタスクを入力してください。" >
+    <input id="input_property" type="text" v-model="newTask" placeholder="ここにタスクを入力してください。" >
     <button @click="addTask">追加する</button>
+    <button @click="deleteTask">作成したタスクを削除する</button>
+    <h3>追加したいタスク: {{newTask}}</h3>
       <ul>
           <div v-for="task in todo">
             <li>
-              <p>タスク名:{{task.todo_name}}  完了したかどうか:{{task.isCompleted}}</p>
+              <p><span class="font-property">タスク名:</span>{{task.todo_name}}  |  <span class="font-property">完了したかどうか:</span>{{task.isCompleted}}</p>
             </li>
           </div>
       </ul>
     </div>
-  </div>
   <script src="./main.js"></script>
 </body>
 </html>

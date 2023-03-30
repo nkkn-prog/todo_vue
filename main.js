@@ -21,7 +21,8 @@ new Vue ({
       }
       this.newTask = '';
     },
-
-
+    deleteTask: function(){
+      this.todo.pop();
+    }
   }
 })
